@@ -52,6 +52,9 @@ public class Repository {
         listOfPerson[listOfPerson.length - 1] = p;
     }
 
+
+
+
     /**
      * Функция удаления из массива Person по номеру
      *
@@ -69,6 +72,7 @@ public class Repository {
      *
      * @return строка о всех данных массива
      */
+    @Override
     public String toString() {
         final StringBuilder builder = new StringBuilder();
         builder.append("List of persons:").append("\r\n");

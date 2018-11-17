@@ -4,11 +4,17 @@ import org.joda.time.LocalDate;
 
 /**
  * Класс Person
+ *
  * @author Modest
  * @version 1
  * @
  */
 public class Person {
+
+    /*
+    Статическое поле для автоматизации получения ID
+     */
+    static int countID = 1;
 
     /**
      * Поле идентификатор
@@ -33,14 +39,14 @@ public class Person {
     /**
      * Конструктор - создание нового объекта с определенными значениями
      *
-     * @param id   - идентификатор
-     * @param name - имя
-     * @param sex - пол
+     * @param name     - имя
+     * @param sex      - пол
      * @param birthday - день рождения
-     * //@see Person#Person()
+     *                 //@see Person#Person()
      */
-    public Person(final int id, final String name, final String sex, final LocalDate birthday) {
-        this.id = id;
+    public Person(final String name, final String sex, final LocalDate birthday) {
+        this.id = countID;
+        countID++;
         this.name = name;
         this.sex = sex;
         this.birthday = birthday;
@@ -57,6 +63,7 @@ public class Person {
 
     /**
      * Функция получения значения поля {@link Person#id}
+     *
      * @return идентификатор
      */
     public int getId() {
@@ -65,6 +72,7 @@ public class Person {
 
     /**
      * Процедура определения идентификатора {@link Person#id}
+     *
      * @param id
      */
     public void setId(int id) {
@@ -73,6 +81,7 @@ public class Person {
 
     /**
      * Функция получения значения поля {@link Person#name}
+     *
      * @return имя
      */
     public String getName() {
@@ -81,6 +90,7 @@ public class Person {
 
     /**
      * Процедура определения имени {@link Person#name}
+     *
      * @param name
      */
     public void setName(String name) {
@@ -89,6 +99,7 @@ public class Person {
 
     /**
      * Функция получения значения поля {@link Person#sex}
+     *
      * @return пол
      */
     public String getMale() {
@@ -97,6 +108,7 @@ public class Person {
 
     /**
      * Процедура определения идентификатора {@link Person#sex}
+     *
      * @param sex
      */
     public void setMale(String sex) {
@@ -105,6 +117,7 @@ public class Person {
 
     /**
      * Функция получения значения поля {@link Person#birthday}
+     *
      * @return день рождения
      */
     public LocalDate getBirthday() {
@@ -113,6 +126,7 @@ public class Person {
 
     /**
      * Процедура определения дня рождения {@link Person#birthday}
+     *
      * @param birthday
      */
     public void setBirthday(LocalDate birthday) {
@@ -121,6 +135,7 @@ public class Person {
 
     /**
      * Функция получения возраста по дате рождения
+     *
      * @return возраст
      */
     public int getAge() {
