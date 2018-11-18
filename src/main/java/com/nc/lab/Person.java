@@ -2,6 +2,8 @@ package com.nc.lab;
 
 import org.joda.time.LocalDate;
 
+import java.util.Comparator;
+
 /**
  * Класс Person
  *
@@ -9,7 +11,7 @@ import org.joda.time.LocalDate;
  * @version 1
  * @
  */
-public class Person {
+public class Person implements Comparable<Person> {
 
     /*
     Статическое поле для автоматизации получения ID
@@ -59,6 +61,7 @@ public class Person {
         name = new String();
         sex = new String();
         birthday = new LocalDate();
+        //CheckName = new CheckName();
     }
 
     /**
@@ -150,6 +153,13 @@ public class Person {
         return year;
     }
 
+   /* @Override
+    public boolean equals(Object o)
+    {
+        return false;
+    }*/
+
+
     /**
      * Функция конвертации данных класса в строку
      *
@@ -158,5 +168,39 @@ public class Person {
     @Override
     public String toString() {
         return "ID " + id + "; Name: " + name + "; Male: " + sex + "; Birthday: " + birthday;
+    }
+
+
+    /*//Comparator для сортировки списка или массива объектов по зарплате
+    public class CheckName {
+
+        @Override
+        public boolean equals(Object o) {
+            return getName().equals(o);
+        }
+    };*/
+
+
+    // компаратор сортирует список или массив объектов по имени
+    public static Comparator<Person> NameComparator = new Comparator<Person>() {
+
+        @Override
+        public int compare(Person p1, Person p2) {
+            return p1.getName().compareTo(p2.getName());
+        }
+    };
+
+    // компаратор сортирует список или массив объектов по возрасту
+    public static Comparator<Person> AgeComparator = new Comparator<Person>() {
+
+        @Override
+        public int compare(Person p1, Person p2) {
+            return p1.getAge() - p2.getAge();
+        }
+    };
+
+    @Override
+    public int compareTo(Person o) {
+        return (this.id - o.id);
     }
 }

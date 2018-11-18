@@ -1,6 +1,7 @@
 package com.nc.lab;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 /**
  * Класс Repository
@@ -9,18 +10,21 @@ import java.util.Arrays;
  * @version 1
  * @
  */
-public class Repository {
+public class Repository {//implements CheckInt{
 
     /**
      * Поле массив Person
      */
     private Person[] listOfPerson;
 
+    private int flag;
+
     /**
      * Конструктор - создание нового объекта
      */
-    public Repository() {
+    public Repository(int flag) {
         listOfPerson = new Person[0];
+        this.flag = flag;
     }
 
     /**
@@ -79,6 +83,27 @@ public class Repository {
         return builder.toString();
     }
 
+   /* public void find(Object O,){
 
+    }
 
+    @Override
+    public boolean check(Person p, Object o) {
+        if(p.CheckName)
+        return false;
+    }*/
+
+    public void sort(Comparator<Person> c) {
+        switch (flag) {
+            case 1:
+                SortedClass.bubleSort(listOfPerson, c);
+                break;
+            case 2:
+                SortedClass.quickSort(listOfPerson, 0, listOfPerson.length - 1, c);
+                break;
+            case 3:
+                SortedClass.insertionSort(listOfPerson,  c);
+                break;
+        }
+    }
 }
