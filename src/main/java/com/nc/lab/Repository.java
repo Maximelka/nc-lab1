@@ -16,7 +16,9 @@ public class Repository {//implements CheckInt{
      * Поле массив Person
      */
     private Person[] listOfPerson;
-
+    /**
+     * флаг для выбора сортировки
+     */
     private int flag;
 
     /**
@@ -83,16 +85,31 @@ public class Repository {//implements CheckInt{
         return builder.toString();
     }
 
-   /* public void find(Object O,){
-
+    /**
+     * Метод поиска объекта
+     * @param o  - ищем по этому параметру
+     * @param checkInt - передаем интерфейс
+     * @return
+     */
+    public Person[] find(Object o, CheckInterface checkInt) {
+        Person[] list = new  Person[listOfPerson.length];
+        int k =0;
+        for (Person p : listOfPerson) {
+            if(checkInt.check(p,o))
+            {
+                list[k]= p;
+                k++;
+            }
+        }
+        list = Arrays.copyOf(list, k);
+        return list;
     }
 
-    @Override
-    public boolean check(Person p, Object o) {
-        if(p.CheckName)
-        return false;
-    }*/
 
+    /**
+     * Сортировка выбирающаяся по флагу
+     * @param c - объект компоратора
+     */
     public void sort(Comparator<Person> c) {
         switch (flag) {
             case 1:
@@ -102,7 +119,7 @@ public class Repository {//implements CheckInt{
                 SortedClass.quickSort(listOfPerson, 0, listOfPerson.length - 1, c);
                 break;
             case 3:
-                SortedClass.insertionSort(listOfPerson,  c);
+                SortedClass.insertionSort(listOfPerson, c);
                 break;
         }
     }

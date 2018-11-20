@@ -11,28 +11,24 @@ import java.util.Comparator;
  * @version 1
  * @
  */
-public class Person implements Comparable<Person> {
+public class Person {//implements Comparable<Person> {
 
-    /*
-    Статическое поле для автоматизации получения ID
+    /**
+     * Статическое поле для автоматизации получения ID
      */
-    static int countID = 1;
-
+    private static int countID = 0;
     /**
      * Поле идентификатор
      */
     private int id;
-
     /**
      * Поле имя
      */
     private String name;
-
     /**
      * Поле пол
      */
     private String sex;
-
     /**
      * Поле день рождения
      */
@@ -44,11 +40,10 @@ public class Person implements Comparable<Person> {
      * @param name     - имя
      * @param sex      - пол
      * @param birthday - день рождения
-     *                 //@see Person#Person()
      */
     public Person(final String name, final String sex, final LocalDate birthday) {
-        this.id = countID;
         countID++;
+        this.id = countID;
         this.name = name;
         this.sex = sex;
         this.birthday = birthday;
@@ -61,7 +56,6 @@ public class Person implements Comparable<Person> {
         name = new String();
         sex = new String();
         birthday = new LocalDate();
-        //CheckName = new CheckName();
     }
 
     /**
@@ -153,13 +147,6 @@ public class Person implements Comparable<Person> {
         return year;
     }
 
-   /* @Override
-    public boolean equals(Object o)
-    {
-        return false;
-    }*/
-
-
     /**
      * Функция конвертации данных класса в строку
      *
@@ -170,18 +157,9 @@ public class Person implements Comparable<Person> {
         return "ID " + id + "; Name: " + name + "; Male: " + sex + "; Birthday: " + birthday;
     }
 
-
-    /*//Comparator для сортировки списка или массива объектов по зарплате
-    public class CheckName {
-
-        @Override
-        public boolean equals(Object o) {
-            return getName().equals(o);
-        }
-    };*/
-
-
-    // компаратор сортирует список или массив объектов по имени
+    /**
+     * компаратор сортирует список или массив объектов по имени
+     */
     public static Comparator<Person> NameComparator = new Comparator<Person>() {
 
         @Override
@@ -190,17 +168,64 @@ public class Person implements Comparable<Person> {
         }
     };
 
-    // компаратор сортирует список или массив объектов по возрасту
+    /**
+     * Компаратор сортирует список или массив объектов по возрасту
+     */
     public static Comparator<Person> AgeComparator = new Comparator<Person>() {
-
         @Override
         public int compare(Person p1, Person p2) {
-            return p1.getAge() - p2.getAge();
+            return p2.getAge() - p1.getAge();
         }
     };
 
-    @Override
+    /**
+     * Компаратор сортирует список или массив объектов по дате рождения
+     */
+    public static Comparator<Person> BirthdayComparator = new Comparator<Person>() {
+        @Override
+        public int compare(Person p1, Person p2) {
+            if (p1.getBirthday().getYear() != p2.getBirthday().getYear())
+                return p1.getBirthday().getYear() - p2.getBirthday().getYear();
+            if (p1.getBirthday().getMonthOfYear() != p2.getBirthday().getMonthOfYear())
+                return p1.getBirthday().getMonthOfYear() - p2.getBirthday().getMonthOfYear();
+            return p1.getBirthday().getDayOfMonth() - p2.getBirthday().getDayOfMonth();
+        }
+    };
+
+   /* @Override
     public int compareTo(Person o) {
         return (this.id - o.id);
-    }
+    }*/
+
+    /**
+     * Проверка по имени
+     */
+    public static CheckInterface CheckName = new CheckInterface() {
+        @Override
+        public boolean check(Person p, Object o) {
+            return p.getName().equals(o);
+        }
+    };
+
+    /**
+     * Проверка по дню рождения
+     */
+    public static CheckInterface CheckBirthday = new CheckInterface() {
+        @Override
+        public boolean check(Person p, Object o) {
+            return p.getBirthday().equals(o);
+        }
+    };
+
+    /**
+     * Проверка по возрасту
+     */
+    public static CheckInterface CheckAge = new CheckInterface() {
+        @Override
+        public boolean check(Person p, Object o) {
+            return p.getAge() == (Integer) o;
+        }
+    };
+
+
 }

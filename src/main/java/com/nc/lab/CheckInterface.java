@@ -1,5 +1,5 @@
 package com.nc.lab;
 
-public interface CheckInt {
+public interface CheckInterface {
     public boolean check(Person p, Object o);
 }
