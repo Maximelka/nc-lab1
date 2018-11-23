@@ -154,7 +154,12 @@ public class Person {//implements Comparable<Person> {
      */
     @Override
     public String toString() {
-        return "ID " + id + "; Name: " + name + "; Male: " + sex + "; Birthday: " + birthday + "\n";
+        final StringBuilder builder = new StringBuilder();
+        builder.append("ID ").append(id);
+        builder.append("; Name: ").append(name);
+        builder.append("; Male: ").append(sex);
+        builder.append("; Birthday: ").append(birthday).append("\r\n");
+        return builder.toString();
     }
 
     /**
