@@ -1,5 +1,6 @@
 package com.nc.lab;
 
+import com.nc.lab.sort.BubleSort;
 import com.nc.lab.sort.SortInterface;
 
 import java.util.Arrays;
@@ -12,14 +13,14 @@ import java.util.Comparator;
  * @version 1
  * @
  */
-public class Repository {//implements CheckInt{
+public class Repository {
 
     /**
      * Поле массив Person
      */
     private Person[] listOfPerson;
     /**
-     * флаг для выбора сортировки
+     * Для выбора сортировки
      */
     private SortInterface sortInt;
 
@@ -30,6 +31,12 @@ public class Repository {//implements CheckInt{
         listOfPerson = new Person[0];
         this.sortInt = sortInt;
     }
+
+    public Repository() {
+        listOfPerson = new Person[0];
+        sortInt = new BubleSort();
+    }
+
 
     /**
      * Функция получения значения поля {@link Repository#listOfPerson}
@@ -47,7 +54,17 @@ public class Repository {//implements CheckInt{
      * @return
      */
     public Person getOfPerson(int n) {
-        return listOfPerson[n - 1];
+//        if (n <= 0 || n >= listOfPerson.length)
+//            return null;
+//        else
+        try {
+            return listOfPerson[n - 1];
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.printf("Выход за границы массива");
+        }
+        finally {
+            return new Person();
+        }
     }
 
     /**

@@ -11,7 +11,7 @@ import java.util.Comparator;
  * @version 1
  * @
  */
-public class Person {//implements Comparable<Person> {
+public class Person {
 
     /**
      * Статическое поле для автоматизации получения ID
