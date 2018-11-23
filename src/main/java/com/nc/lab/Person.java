@@ -154,7 +154,7 @@ public class Person {//implements Comparable<Person> {
      */
     @Override
     public String toString() {
-        return "ID " + id + "; Name: " + name + "; Male: " + sex + "; Birthday: " + birthday;
+        return "ID " + id + "; Name: " + name + "; Male: " + sex + "; Birthday: " + birthday + "\n";
     }
 
     /**
@@ -191,11 +191,6 @@ public class Person {//implements Comparable<Person> {
             return p1.getBirthday().getDayOfMonth() - p2.getBirthday().getDayOfMonth();
         }
     };
-
-   /* @Override
-    public int compareTo(Person o) {
-        return (this.id - o.id);
-    }*/
 
     /**
      * Проверка по имени

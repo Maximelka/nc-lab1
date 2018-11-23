@@ -1,5 +1,7 @@
 package com.nc.lab;
 
+import com.nc.lab.sort.SortInterface;
+
 import java.util.Arrays;
 import java.util.Comparator;
 
@@ -19,14 +21,14 @@ public class Repository {//implements CheckInt{
     /**
      * флаг для выбора сортировки
      */
-    private int flag;
+    private SortInterface sortInt;
 
     /**
      * Конструктор - создание нового объекта
      */
-    public Repository(int flag) {
+    public Repository(SortInterface sortInt) {
         listOfPerson = new Person[0];
-        this.flag = flag;
+        this.sortInt = sortInt;
     }
 
     /**
@@ -80,24 +82,24 @@ public class Repository {//implements CheckInt{
         final StringBuilder builder = new StringBuilder();
         builder.append("List of persons:").append("\r\n");
         for (int i = 0; i < listOfPerson.length; i++) {
-            builder.append((i + 1) + ". ").append(listOfPerson[i].toString()).append("\r\n");
+            builder.append((i + 1) + ". ").append(listOfPerson[i].toString());
         }
         return builder.toString();
     }
 
     /**
      * Метод поиска объекта
-     * @param o  - ищем по этому параметру
+     *
+     * @param o        - ищем по этому параметру
      * @param checkInt - передаем интерфейс
      * @return
      */
-    public Person[] find(Object o, CheckInterface checkInt) {
-        Person[] list = new  Person[listOfPerson.length];
-        int k =0;
+    public Person[] search(Object o, CheckInterface checkInt) {
+        Person[] list = new Person[listOfPerson.length];
+        int k = 0;
         for (Person p : listOfPerson) {
-            if(checkInt.check(p,o))
-            {
-                list[k]= p;
+            if (checkInt.check(p, o)) {
+                list[k] = p;
                 k++;
             }
         }
@@ -108,19 +110,10 @@ public class Repository {//implements CheckInt{
 
     /**
      * Сортировка выбирающаяся по флагу
+     *
      * @param c - объект компоратора
      */
     public void sort(Comparator<Person> c) {
-        switch (flag) {
-            case 1:
-                SortedClass.bubleSort(listOfPerson, c);
-                break;
-            case 2:
-                SortedClass.quickSort(listOfPerson, 0, listOfPerson.length - 1, c);
-                break;
-            case 3:
-                SortedClass.insertionSort(listOfPerson, c);
-                break;
-        }
+        sortInt.sort(listOfPerson, c);
     }
 }
