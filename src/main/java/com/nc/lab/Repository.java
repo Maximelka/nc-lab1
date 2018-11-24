@@ -54,15 +54,11 @@ public class Repository {
      * @return
      */
     public Person getOfPerson(int n) {
-//        if (n <= 0 || n >= listOfPerson.length)
-//            return null;
-//        else
         try {
             return listOfPerson[n - 1];
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.printf("Выход за границы массива");
-        }
-        finally {
+        } finally {
             return new Person();
         }
     }
@@ -83,10 +79,12 @@ public class Repository {
      * @param d
      */
     public void deletePerson(int d) {
-        for (int i = d - 1; i < listOfPerson.length - 1; i++) {
-            listOfPerson[i] = listOfPerson[i + 1];
+        if (d > 0 && d <= listOfPerson.length) {
+            for (int i = d - 1; i < listOfPerson.length - 1; i++) {
+                listOfPerson[i] = listOfPerson[i + 1];
+            }
+            listOfPerson = Arrays.copyOf(listOfPerson, listOfPerson.length - 1);
         }
-        listOfPerson = Arrays.copyOf(listOfPerson, listOfPerson.length - 1);
     }
 
     /**
