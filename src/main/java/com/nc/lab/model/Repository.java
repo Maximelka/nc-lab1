@@ -1,7 +1,9 @@
-package com.nc.lab;
+package com.nc.lab.model;
 
+import com.nc.lab.reflection.Inject;
 import com.nc.lab.sort.BubleSort;
 import com.nc.lab.sort.SortInterface;
+import org.apache.log4j.Logger;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -15,13 +17,25 @@ import java.util.Comparator;
  */
 public class Repository {
 
+
+    private static final Logger log = Logger.getLogger(Repository.class);
     /**
      * Поле массив Person
      */
     private Person[] listOfPerson;
+
+    public SortInterface getSortInt() {
+        return sortInt;
+    }
+
+    public void setSortInt(SortInterface sortInt) {
+        this.sortInt = sortInt;
+    }
+
     /**
      * Для выбора сортировки
      */
+    @Inject
     private SortInterface sortInt;
 
     /**
@@ -34,7 +48,7 @@ public class Repository {
 
     public Repository() {
         listOfPerson = new Person[0];
-        sortInt = new BubleSort();
+        //sortInt = new BubleSort();
     }
 
 
@@ -71,6 +85,7 @@ public class Repository {
     public void addPerson(Person p) {
         listOfPerson = Arrays.copyOf(listOfPerson, listOfPerson.length + 1);
         listOfPerson[listOfPerson.length - 1] = p;
+        log.info("Person add");
     }
 
     /**
@@ -84,6 +99,7 @@ public class Repository {
                 listOfPerson[i] = listOfPerson[i + 1];
             }
             listOfPerson = Arrays.copyOf(listOfPerson, listOfPerson.length - 1);
+            log.info("Person delete");
         }
     }
 
@@ -119,6 +135,7 @@ public class Repository {
             }
         }
         list = Arrays.copyOf(list, k);
+        log.info("search");
         return list;
     }
 
@@ -130,5 +147,6 @@ public class Repository {
      */
     public void sort(Comparator<Person> c) {
         sortInt.sort(listOfPerson, c);
+        log.info("sort");
     }
 }

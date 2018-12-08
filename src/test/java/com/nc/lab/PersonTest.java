@@ -1,10 +1,9 @@
 package com.nc.lab;
 
+import com.nc.lab.model.Person;
 import org.joda.time.LocalDate;
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class PersonTest {
 

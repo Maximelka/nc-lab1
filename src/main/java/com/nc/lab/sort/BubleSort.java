@@ -1,10 +1,10 @@
 package com.nc.lab.sort;
 
-import com.nc.lab.Person;
+import com.nc.lab.model.Person;
 
 import java.util.Comparator;
 
-public class BubleSort implements SortInterface  {
+public class BubleSort implements SortInterface {
     @Override
     public void sort(Person[] listOfPerson, Comparator<Person> c) {
         int i = 0;

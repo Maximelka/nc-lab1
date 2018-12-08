@@ -1,8 +1,9 @@
 package com.nc.lab;
 
+import com.nc.lab.model.Person;
+import com.nc.lab.model.Repository;
 import org.joda.time.LocalDate;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 public class RepositoryTest {

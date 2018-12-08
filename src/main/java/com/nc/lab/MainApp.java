@@ -1,10 +1,16 @@
 package com.nc.lab;
 
+import com.nc.lab.model.Person;
+import com.nc.lab.model.Repository;
+import com.nc.lab.reflection.InjectAnnotationAnalyzer;
 import org.joda.time.LocalDate;
 
 public class MainApp {
 
-    public static void main(final String... args) {
+    public static void main(final String... args) throws Exception{
+        InjectAnnotationAnalyzer analyzer = new InjectAnnotationAnalyzer();
+        analyzer.parse(Repository.class);
+
         Person p1 = new Person("A", "male", new LocalDate(1997, 2, 1));
         Person p2 = new Person("C", "male", new LocalDate(1996, 1, 1));
         Person p3 = new Person("B", "male", new LocalDate(1997, 3, 1));

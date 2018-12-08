@@ -1,4 +1,4 @@
-package com.nc.lab;
+package com.nc.lab.model;
 
 import org.joda.time.LocalDate;
 
@@ -12,6 +12,11 @@ import java.util.Comparator;
  * @
  */
 public class Person {
+
+    /**
+     *  Логгер
+     */
+
 
     /**
      * Статическое поле для автоматизации получения ID
