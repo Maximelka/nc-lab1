@@ -2,7 +2,6 @@ package com.nc.lab.model;
 
 import com.nc.lab.reflection.Inject;
 import com.nc.lab.sort.BubleSort;
-import com.nc.lab.sort.QuickSort;
 import com.nc.lab.sort.SortInterface;
 import org.apache.log4j.Logger;
 
@@ -18,12 +17,25 @@ import java.util.Comparator;
  */
 public class Repository {
 
-
     private static final Logger log = Logger.getLogger(Repository.class);
     /**
      * Поле массив Person
      */
     private Person[] listOfPerson;
+
+    /**
+     * Для выбора сортировки
+     */
+    @Inject
+    private SortInterface sortInt;
+
+    /**
+     * Конструктор - создание нового объекта
+     */
+    public Repository() {
+        listOfPerson = new Person[0];
+        //sortInt = new BubleSort();
+    }
 
     public SortInterface getSortInt() {
         return sortInt;
@@ -32,26 +44,6 @@ public class Repository {
     public void setSortInt(SortInterface sortInt) {
         this.sortInt = sortInt;
     }
-
-    /**
-     * Для выбора сортировки
-     */
-    @Inject
-    private SortInterface sortInt ;//= new QuickSort();
-
-    /**
-     * Конструктор - создание нового объекта
-     */
-    public Repository(SortInterface sortInt) {
-        listOfPerson = new Person[0];
-        this.sortInt = sortInt;
-    }
-
-    public Repository() {
-        listOfPerson = new Person[0];
-        //sortInt = new BubleSort();
-    }
-
 
     /**
      * Функция получения значения поля {@link Repository#listOfPerson}
