@@ -11,6 +11,9 @@ public class Injector {
      */
     public static final String PATH_TO_PROPERTIES = "src/main/resources/config.properties";
 
+    /**
+     * Инжект
+     */
     public static <T> T inject(T object) {
         FileInputStream fileInputStream;
         //Инициализируем специальный объект Properties
