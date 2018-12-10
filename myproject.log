@@ -53,3 +53,92 @@
 08.12.2018 22:20:41 INFO  Repository:88 - Person add
 08.12.2018 22:20:41 INFO  Repository:88 - Person add
 08.12.2018 22:20:41 INFO  Repository:88 - Person add
+10.12.2018 17:08:01 INFO  Repository:88 - Person add
+10.12.2018 17:08:01 INFO  Repository:88 - Person add
+10.12.2018 17:08:01 INFO  Repository:88 - Person add
+10.12.2018 17:11:07 INFO  Repository:88 - Person add
+10.12.2018 17:11:07 INFO  Repository:88 - Person add
+10.12.2018 17:11:07 INFO  Repository:88 - Person add
+10.12.2018 17:12:19 INFO  Repository:88 - Person add
+10.12.2018 17:12:21 INFO  Repository:88 - Person add
+10.12.2018 17:12:21 INFO  Repository:88 - Person add
+10.12.2018 17:26:06 INFO  Repository:89 - Person add
+10.12.2018 17:26:06 INFO  Repository:89 - Person add
+10.12.2018 17:26:06 INFO  Repository:89 - Person add
+10.12.2018 17:26:07 ERROR Repository:74 - Выход за границы массива
+10.12.2018 17:33:27 INFO  Repository:89 - Person add
+10.12.2018 17:33:27 INFO  Repository:89 - Person add
+10.12.2018 17:33:27 INFO  Repository:89 - Person add
+10.12.2018 17:33:27 ERROR Repository:74 - Выход за границы массива
+10.12.2018 17:33:35 INFO  Repository:89 - Person add
+10.12.2018 17:33:35 INFO  Repository:89 - Person add
+10.12.2018 17:33:35 INFO  Repository:89 - Person add
+10.12.2018 17:33:35 ERROR Repository:74 - Выход за границы массива
+10.12.2018 17:34:02 INFO  Repository:89 - Person add
+10.12.2018 17:34:02 INFO  Repository:89 - Person add
+10.12.2018 17:34:02 INFO  Repository:89 - Person add
+10.12.2018 17:34:02 ERROR Repository:74 - Выход за границы массива
+10.12.2018 17:36:18 INFO  Repository:89 - Person add
+10.12.2018 17:36:18 INFO  Repository:89 - Person add
+10.12.2018 17:36:18 INFO  Repository:89 - Person add
+10.12.2018 17:36:18 ERROR Repository:74 - Выход за границы массива
+10.12.2018 17:38:06 INFO  Repository:89 - Person add
+10.12.2018 17:38:06 INFO  Repository:89 - Person add
+10.12.2018 17:38:06 INFO  Repository:89 - Person add
+10.12.2018 17:38:06 ERROR Repository:74 - Выход за границы массива
+10.12.2018 17:46:32 INFO  Repository:89 - Person add
+10.12.2018 17:46:32 INFO  Repository:89 - Person add
+10.12.2018 17:46:32 INFO  Repository:89 - Person add
+10.12.2018 17:46:32 ERROR Repository:74 - Выход за границы массива
+10.12.2018 17:47:14 INFO  Repository:89 - Person add
+10.12.2018 17:47:14 INFO  Repository:89 - Person add
+10.12.2018 17:47:14 INFO  Repository:89 - Person add
+10.12.2018 17:47:14 ERROR Repository:74 - Выход за границы массива
+10.12.2018 17:47:41 INFO  Repository:89 - Person add
+10.12.2018 17:47:41 INFO  Repository:89 - Person add
+10.12.2018 17:47:41 INFO  Repository:89 - Person add
+10.12.2018 17:47:41 ERROR Repository:74 - Выход за границы массива
+10.12.2018 17:48:13 INFO  Repository:89 - Person add
+10.12.2018 17:48:13 INFO  Repository:89 - Person add
+10.12.2018 17:48:13 INFO  Repository:89 - Person add
+10.12.2018 17:48:13 ERROR Repository:74 - Выход за границы массива
+10.12.2018 17:48:27 INFO  Repository:89 - Person add
+10.12.2018 17:48:27 INFO  Repository:89 - Person add
+10.12.2018 17:48:27 INFO  Repository:89 - Person add
+10.12.2018 17:48:27 ERROR Repository:74 - Выход за границы массива
+10.12.2018 17:49:14 INFO  Repository:89 - Person add
+10.12.2018 17:49:14 INFO  Repository:89 - Person add
+10.12.2018 17:49:14 INFO  Repository:89 - Person add
+10.12.2018 17:49:14 ERROR Repository:74 - Выход за границы массива
+10.12.2018 17:49:34 INFO  Repository:89 - Person add
+10.12.2018 17:49:34 INFO  Repository:89 - Person add
+10.12.2018 17:49:34 INFO  Repository:89 - Person add
+10.12.2018 17:49:34 ERROR Repository:74 - Выход за границы массива
+10.12.2018 17:50:52 INFO  Repository:89 - Person add
+10.12.2018 17:50:52 INFO  Repository:89 - Person add
+10.12.2018 17:50:52 INFO  Repository:89 - Person add
+10.12.2018 17:50:52 ERROR Repository:74 - Выход за границы массива
+10.12.2018 17:51:53 INFO  Repository:90 - Person add
+10.12.2018 17:51:53 INFO  Repository:90 - Person add
+10.12.2018 17:51:53 INFO  Repository:90 - Person add
+10.12.2018 17:51:53 ERROR Repository:75 - Выход за границы массива
+10.12.2018 17:52:13 INFO  Repository:90 - Person add
+10.12.2018 17:52:13 INFO  Repository:90 - Person add
+10.12.2018 17:52:13 INFO  Repository:90 - Person add
+10.12.2018 17:52:13 ERROR Repository:75 - Выход за границы массива
+10.12.2018 17:52:34 INFO  Repository:90 - Person add
+10.12.2018 17:52:34 INFO  Repository:90 - Person add
+10.12.2018 17:52:34 INFO  Repository:90 - Person add
+10.12.2018 17:52:34 ERROR Repository:75 - Выход за границы массива
+10.12.2018 17:52:50 INFO  Repository:90 - Person add
+10.12.2018 17:52:50 INFO  Repository:90 - Person add
+10.12.2018 17:52:50 INFO  Repository:90 - Person add
+10.12.2018 17:52:50 ERROR Repository:75 - Выход за границы массива
+10.12.2018 17:53:03 INFO  Repository:90 - Person add
+10.12.2018 17:53:03 INFO  Repository:90 - Person add
+10.12.2018 17:53:03 INFO  Repository:90 - Person add
+10.12.2018 17:53:03 ERROR Repository:75 - Выход за границы массива
+10.12.2018 18:18:29 INFO  Repository:90 - Person add
+10.12.2018 18:18:30 INFO  Repository:90 - Person add
+10.12.2018 18:18:30 INFO  Repository:90 - Person add
+10.12.2018 18:18:30 ERROR Repository:75 - Выход за границы массива

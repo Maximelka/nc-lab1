@@ -2,6 +2,7 @@ package com.nc.lab.model;
 
 import com.nc.lab.reflection.Inject;
 import com.nc.lab.sort.BubleSort;
+import com.nc.lab.sort.QuickSort;
 import com.nc.lab.sort.SortInterface;
 import org.apache.log4j.Logger;
 
@@ -36,7 +37,7 @@ public class Repository {
      * Для выбора сортировки
      */
     @Inject
-    private SortInterface sortInt;
+    private SortInterface sortInt ;//= new QuickSort();
 
     /**
      * Конструктор - создание нового объекта
@@ -71,6 +72,7 @@ public class Repository {
         try {
             return listOfPerson[n - 1];
         } catch (ArrayIndexOutOfBoundsException e) {
+            log.error("Выход за границы массива");
             System.out.printf("Выход за границы массива");
         } finally {
             return new Person();
