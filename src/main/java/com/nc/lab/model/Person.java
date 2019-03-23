@@ -1,7 +1,10 @@
 package com.nc.lab.model;
 
+import com.nc.lab.xml.adapter.LocalDateAdapter;
 import org.joda.time.LocalDate;
 
+import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.util.Comparator;
 
 /**
@@ -11,12 +14,10 @@ import java.util.Comparator;
  * @version 1
  * @
  */
+
+@XmlRootElement(name = "person")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Person {
-
-    /**
-     *  Логгер
-     */
-
 
     /**
      * Статическое поле для автоматизации получения ID
@@ -29,14 +30,18 @@ public class Person {
     /**
      * Поле имя
      */
+    @XmlAttribute(name = "name")
     private String name;
     /**
      * Поле пол
      */
+    @XmlAttribute(name = "sex")
     private String sex;
     /**
      * Поле день рождения
      */
+    @XmlAttribute(name = "birthday")
+    @XmlJavaTypeAdapter(value = LocalDateAdapter.class)
     private LocalDate birthday;
 
     /**
@@ -104,7 +109,7 @@ public class Person {
      *
      * @return пол
      */
-    public String getMale() {
+    public String getSex() {
         return name;
     }
 
@@ -113,7 +118,7 @@ public class Person {
      *
      * @param sex
      */
-    public void setMale(String sex) {
+    public void setSex(String sex) {
         this.sex = sex;
     }
 
@@ -162,7 +167,7 @@ public class Person {
         final StringBuilder builder = new StringBuilder();
         builder.append("ID ").append(id);
         builder.append("; Name: ").append(name);
-        builder.append("; Male: ").append(sex);
+        builder.append("; Sex: ").append(sex);
         builder.append("; Birthday: ").append(birthday).append("\r\n");
         return builder.toString();
     }

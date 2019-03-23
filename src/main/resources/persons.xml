@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persons>
+    <person name="Maxim" sex="male" birthday="1999-1-1"/>
+    <person name="Ivan" sex="male" birthday="1999-2-2"/>
+    <person name="Franklin" sex="male" birthday="1999-3-3"/>
+</persons>

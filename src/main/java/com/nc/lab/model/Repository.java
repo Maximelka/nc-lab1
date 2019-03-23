@@ -5,6 +5,7 @@ import com.nc.lab.sort.BubleSort;
 import com.nc.lab.sort.SortInterface;
 import org.apache.log4j.Logger;
 
+import javax.xml.bind.annotation.*;
 import java.util.Arrays;
 import java.util.Comparator;
 
@@ -15,18 +16,22 @@ import java.util.Comparator;
  * @version 1
  * @
  */
+@XmlRootElement(name = "persons")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Repository {
 
     private static final Logger log = Logger.getLogger(Repository.class);
     /**
      * Поле массив Person
      */
+    @XmlElement(name = "person")
     private Person[] listOfPerson;
 
     /**
      * Для выбора сортировки
      */
     @Inject
+    @XmlTransient
     private SortInterface sortInt;
 
     /**
@@ -34,7 +39,6 @@ public class Repository {
      */
     public Repository() {
         listOfPerson = new Person[0];
-        //sortInt = new BubleSort();
     }
 
     public SortInterface getSortInt() {
